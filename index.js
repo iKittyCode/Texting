@@ -6,8 +6,8 @@ var Datastore = require('nedb'),
 var express = require('express')
 var app = express()
 
-app.listen(8090, () => {
-    console.log("Listening at port 8090")
+app.listen(8090 || process.env.PORT, () => {
+    console.log("Listening at port 8090 or" + process.env.PORT)
 })
 app.use(express.static('client'))
 app.use(express.json())
